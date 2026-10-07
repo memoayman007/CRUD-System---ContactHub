@@ -1,0 +1,120 @@
+:root {
+    --color-violet-600: #7f22fe;
+    --main-font: "Boogaloo-Regular";
+}
+
+* {
+    font-family: var(--main-font);
+}
+
+@font-face {
+    font-family: "Boogaloo-Regular";
+    src: url(../customFonts/Boogaloo-Regular.ttf);
+}
+
+/* custom letter spacing utilites */
+.tracking-tight {
+    letter-spacing: -0.05em;
+}
+
+.tracking-normal {
+    letter-spacing: 0em;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+}
+
+.bg-blue {
+    background-image: linear-gradient(to right, #1761fd, #2a7dff);
+}
+
+.bg-purple {
+    background-image: linear-gradient(to right, #7e23fd, #503af7);
+}
+
+.bg-red {
+    background-image: linear-gradient(to right, #fd1c50, #ea0019);
+}
+
+.bg-orange {
+    background-image: linear-gradient(to right, #ffb300, #ff7200);
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.shadow-2 {
+    box-shadow: 0px 2px 10px rgb(220, 218, 218);
+}
+
+
+.main-font {
+    font-family: var(--main-font);
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+
+.w-50px {
+    width: 50px;
+}
+
+.small-square {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.medium-square {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pt-7 {
+    padding-top: 7rem;
+}
+
+.py-7 {
+    padding-top: 7rem;
+}
+
+.p-4-5 {
+    padding: 2.5rem;
+}
+
+.fs-7 {
+    font-size: 0.8rem;
+}
+
+.text-violet-600 {
+    color: var(--color-violet-600);
+}
+
+.text-grey {
+    color: #b0aeae;
+}
+
+.bg-grey-subtle {
+    background-color: #ececee;
+}
+
+.shadow-violet {
+    box-shadow: 0px 3px 10px rgb(187, 166, 234);
+}
+
+input::placeholder {
+    color: #b0aeae;
+}
