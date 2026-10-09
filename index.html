@@ -12,8 +12,83 @@
     <title> ContactHub - Smart Contact Manager</title>
 </head>
 
-<body class="bg-body-tertiary">
-    <nav class="navbar navbar-expand-lg bg-white border-bottom border-light-subtle  p-0 fixed-top">
+<body class="bg-body-tertiary position-relative">
+    <div id="input-form"
+        class="d-none bg-dark bg-opacity-25 d-flex  align-items-center justify-content-center position-absolute z-3 w-100 h-100 ">
+        <div class=" input-div custom-scroll bg-white opacity-100  rounded-4">
+            <div class="border-bottom px-4 py-3 d-flex align-items-center justify-content-between">
+                <h3>Add New Contact</h3>
+                <button id="btn-form-close" class="btn text-secondary"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <form class="d-flex flex-column gap-2 p-4">
+                <div class="d-flex flex-column gap-3 align-items-center justify-content-center ">
+                    <div class="bg-primary text-white rounded-circle large-square"><i
+                            class="fa-solid fa-user fa-2xl"></i></div>
+                    <div class="btn bg-grey"> <i class="fa-solid fa-camera text-secondary"></i> Change Photo</div>
+                </div>
+                <div class="w-100 d-flex flex-column gap-2">
+                    <label for="FullName">FullName: <span class="text-danger">*</span></label>
+                    <input id="FullName" class="rounded-3 custom-input" type="text" placeholder="Enter Your Full Name">
+                </div>
+
+                <div class="w-100 d-flex flex-column gap-2">
+                    <label for="phone">PhoneNumber: <span class="text-danger">*</span></label>
+                    <input id="phone" class="rounded-3 custom-input" type="tel" placeholder="e.g. ,01019767067">
+                </div>
+
+                <div class="w-100 d-flex flex-column gap-2">
+                    <label for="email">Email:</label>
+                    <input id="email" class="rounded-3 custom-input" type="text" placeholder="name@example.com">
+                </div>
+
+                <div class="w-100 d-flex flex-column gap-2">
+                    <label for="address">Address:</label>
+                    <input id="address" class="rounded-3 custom-input" type="text" placeholder="Enter address">
+                </div>
+                <div class="w-100 d-flex flex-column gap-2">
+                    <label for="group">Group:</label>
+                    <select name="group" id="group" class="rounded-3 custom-input">
+                        <option value="1">Select a group</option>
+                        <option value="2">Family</option>
+                        <option value="3">Friend</option>
+                        <option value="4">Work</option>
+                        <option value="5">School</option>
+                        <option value="6">Other</option>
+                    </select>
+                </div>
+                <div class="w-100 d-flex flex-column gap-2">
+                    <label for="notes">Notes:</label>
+                    <textarea name="notes" id="notes" class="rounded-3 custom-input resize-none p-2"
+                        placeholder="Add notes about this contact"></textarea>
+                </div>
+                <div class="d-flex gap-3 mt-4">
+                    <div class="d-flex gap-1">
+                        <input type="checkbox" name="favorite" id="favorite">
+                        <label for="favorite" class="text-secondary"><i class="fa-solid fa-star fa-sm text-warning"></i>
+                            Favorite</label>
+
+                    </div>
+
+                    <div class="d-flex gap-1">
+                        <input type="checkbox" name="emergency" id="emergency">
+                        <label for="emergency" class="text-secondary"><i
+                                class="fa-solid fa-heart-pulse fa-sm text-danger"></i> Emergency</label>
+
+                    </div>
+
+                </div>
+                <div class="d-flex gap-3 justify-content-between mt-4">
+                    <button class="btn bg-grey-subtle text-secondary rounded-3 w-50">Cancel</button>
+                    <button class="btn bg-purple text-white rounded-3 w-50"><i class="fa-solid fa-check"></i> Save
+                        Contact</button>
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom border-light-subtle  p-0 fixed-top z-2">
         <div class="container">
             <div class="navbar-brand d-flex mt-2  gap-2 " href="#">
                 <div class="bg-purple rounded-3 shadow-violet small-square mt-1">
@@ -25,24 +100,20 @@
                     <p class="fs-7 text-secondary">Smart Contact Manager</p>
                 </div>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="ms-auto d-flex gap-4 align-items-center ">
-                    <button class="btn bg-purple text-white"> <i class="fa-solid fa-plus"></i> Add Contact</button>
-                    <i class="fa-solid fa-bell"></i>
-                    <i class="fa-solid fa-gear"></i>
-                    <img class="w-50px rounded-circle " src="img/profile.jpeg" alt="profile">
-                </div>
 
+            <div class="ms-auto d-flex gap-2 gap-md-4 align-items-center ">
+                <button id="btn-display-form" class="btn bg-purple text-white"> <i class="fa-solid fa-plus"></i> Add Contact</button>
+                <i class="fa-solid fa-bell d-none d-md-block"></i>
+                <i class="fa-solid fa-gear d-none d-md-block"></i>
+                <img class="w-40px rounded-3 " src="img/profile.jpeg" alt="profile">
             </div>
+
+
         </div>
     </nav>
-    <main class="container pt-7">
-        <section id="quick-stats" class="row gy-3">
+
+    <main class="container pt-7 position-relative z-1">
+        <section id="quick-stats" class="row gy-3 mb-5">
 
             <div class="col-6 col-lg-4">
                 <div class=" d-flex gap-3 align-items-center  bg-white p-3 ps-3 ps-lg-4 rounded-4 border  shadow-2">
@@ -75,58 +146,69 @@
                 </div>
             </div>
         </section>
-        <section id="contact-header" class="mt-5">
-            <div>
-                <h2 class="fw-bold">All Contacts</h2>
-                <p class="text-secondary">Manage and organize your <span>0</span> contact</p>
-            </div>
-            <div class="position-relative">
-                <div class="position-absolute top-50 ps-3 translate-middle-y"><i
-                        class="fa-solid fa-magnifying-glass text-grey"></i></div>
-                <input class="search-bar w-100 px-5 py-2 bg-white rounded-3 border"
-                    placeholder="Search by name, phone, or email...">
+        <div class="row mx-0 g-3 ">
+            <div class="col-lg-8 ">
+                <section id="contact-header">
+                    <div>
+                        <h2 class="fw-bold">All Contacts</h2>
+                        <p class="text-secondary">Manage and organize your <span>0</span> contact</p>
+                    </div>
+                    <div class="position-relative">
+                        <div class="position-absolute top-50 ps-3 translate-middle-y"><i
+                                class="fa-solid fa-magnifying-glass text-grey"></i></div>
+                        <input class="search-bar w-100 px-5 py-2 bg-white rounded-3 border"
+                            placeholder="Search by name, phone, or email...">
+
+                    </div>
+
+                </section>
+                <section id="contacts-grid">
+                    <div class="py-7 d-flex flex-column gap-3 align-items-center justify-content-center">
+                        <div class="p-4-5 bg-grey-subtle text-grey medium-square rounded-4"><i
+                                class="fa-solid fa-address-book fa-2xl"></i></div>
+                        <div class="d-flex flex-column justify-content-center align-items-center fs-5">
+                            <p class="m-0">No contacts found</p>
+                            <p class="text-secondary">Click "Add Contact" to get started</p>
+                        </div>
+                    </div>
+                </section>
 
             </div>
+            <div class="col-lg-4 ">
+                <section id="favorite-section-mobile"
+                    class="rounded-4 mb-3 overflow-hidden bg-white shadow border-light-subtle border">
+                    <div
+                        class=" d-flex align-items-center gap-3 p-3 bg-orange-subtle border-bottom border-light-subtle">
+                        <div class="small-square bg-orange  text-white rounded-3"><i class="fa-solid fa-star"></i></div>
+                        <div>
+                            <h2 class="fs-5 m-0 lh-1">Favorite</h2>
+                            <p class="fs-7 text-secondary m-0"> Quick access</p>
+                        </div>
+                    </div>
+                    <div class="bg-white py-5">
+                        <p class="text-center text-grey tracking-wide">No favorites yet</p>
+                    </div>
 
-        </section>
-        <section id="contacts-grid">
-            <div class="py-7 d-flex flex-column gap-3 align-items-center justify-content-center">
-                <div class="p-4-5 bg-grey-subtle text-grey medium-square rounded-4"><i
-                        class="fa-solid fa-address-book fa-2xl"></i></div>
-                <div class="d-flex flex-column justify-content-center align-items-center fs-5">
-                    <p class="m-0">No contacts found</p>
-                    <p class="text-secondary">Click "Add Contact" to get started</p>
-                </div>
-            </div>
-        </section>
+                </section>
+                <section id="emergency-contacts-mobile"
+                    class="rounded-4 mb-3 overflow-hidden bg-white shadow border-light-subtle border">
+                    <div class=" d-flex align-items-center gap-3 p-3 bg-pink border-bottom border-light-subtle">
+                        <div class="small-square bg-red rounded-3 text-white"><i class="fa-solid fa-heart-pulse "></i>
+                        </div>
+                        <div>
+                            <h2 class="fs-5 m-0 lh-1">Emergency</h2>
+                            <p class="fs-7 text-secondary m-0"> Urgent contacts</p>
+                        </div>
+                    </div>
+                    <div class="bg-white py-5">
+                        <p class="text-center text-grey tracking-wide">No favorites yet</p>
+                    </div>
 
-        <section id="favorite-section-mobile"
-            class="rounded-4 mb-3 overflow-hidden bg-white shadow border-light-subtle border">
-            <div class=" d-flex align-items-center gap-3 p-3 bg-orange-subtle border-bottom border-light-subtle">
-                <div class="small-square bg-orange  text-white rounded-3"><i class="fa-solid fa-star"></i></div>
-                <div>
-                    <h2 class="fs-5 m-0 lh-1">Favorite</h2>
-                    <p class="fs-7 text-secondary m-0"> Quick access</p>
-                </div>
+                </section>
             </div>
-            <div class="bg-white py-5">
-                <p class="text-center text-grey tracking-wide">No favorites yet</p>
-            </div>
+        </div>
 
-        </section>
-        <section id="emergency-contacts-mobile" class="rounded-4 mb-3 overflow-hidden bg-white shadow border-light-subtle border">
-            <div class=" d-flex align-items-center gap-3 p-3 bg-pink border-bottom border-light-subtle">
-                <div class="small-square bg-red rounded-3 text-white"><i class="fa-solid fa-heart-pulse "></i></div>
-                <div>
-                    <h2 class="fs-5 m-0 lh-1">Emergency</h2>
-                    <p class="fs-7 text-secondary m-0"> Urgent contacts</p>
-                </div>
-            </div>
-            <div class="bg-white py-5">
-                <p class="text-center text-grey tracking-wide">No favorites yet</p>
-            </div>
 
-        </section>
 
 
     </main>
