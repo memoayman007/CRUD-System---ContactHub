@@ -61,7 +61,9 @@
 .bg-pink {
     background-color: #fff8ec !important;
 }
-
+.bg-orange-subtle {
+    background-color: #fcfaf1 !important;
+}
 
 .w-50px {
     width: 50px;
