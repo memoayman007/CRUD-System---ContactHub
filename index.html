@@ -44,33 +44,33 @@
     <main class="container pt-7">
         <section id="quick-stats" class="row gy-3">
 
-            <div class="col-sm-6 col-lg-4">
-                <div class=" d-flex gap-3 align-items-center  bg-white p-3 ps-4 rounded-4 border  shadow-2">
+            <div class="col-6 col-lg-4">
+                <div class=" d-flex gap-3 align-items-center  bg-white p-3 ps-3 ps-lg-4 rounded-4 border  shadow-2">
                     <div class="medium-square bg-blue rounded-3 text-white"><i class="fa-solid fa-users fa-lg"></i>
                     </div>
                     <div>
-                        <p class="text-secondary m-0">TOTAL</p>
-                        <p class="fs-3 m-0">0</p>
+                        <p class="text-secondary m-0 ">TOTAL</p>
+                        <p class="fs-3 m-0 lh-1">0</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="d-flex gap-3 align-items-center  bg-white p-3 ps-4 rounded-4  shadow-2">
+            <div class="col-6 col-lg-4">
+                <div class="d-flex gap-3 align-items-center  bg-white p-3 ps-3 ps-lg-4 rounded-4  shadow-2">
                     <div class="medium-square bg-orange rounded-3 text-white"><i class="fa-solid fa-star fa-lg"></i>
                     </div>
                     <div>
-                        <p class="text-secondary m-0">FAVORITES</p>
-                        <p class="fs-3 m-0">0</p>
+                        <p class="text-secondary m-0 ">FAVORITES</p>
+                        <p class="fs-3 m-0 lh-1">0</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class=" d-flex gap-3 align-items-center  bg-white p-3 ps-4 rounded-4  shadow-2">
+            <div class="col-6 col-lg-4">
+                <div class=" d-flex gap-3 align-items-center  bg-white p-3 ps-3  ps-lg-4 rounded-4  shadow-2">
                     <div class="medium-square bg-red rounded-3 text-white"><i class="fa-solid fa-heart-pulse fa-lg"></i>
                     </div>
                     <div>
-                        <p class="text-secondary m-0">EMERGENCY</p>
-                        <p class="fs-3 m-0">0</p>
+                        <p class="text-secondary m-0 ">EMERGENCY</p>
+                        <p class="fs-3 m-0 lh-1">0</p>
                     </div>
                 </div>
             </div>
@@ -93,24 +93,43 @@
             <div class="py-7 d-flex flex-column gap-3 align-items-center justify-content-center">
                 <div class="p-4-5 bg-grey-subtle text-grey medium-square rounded-4"><i
                         class="fa-solid fa-address-book fa-2xl"></i></div>
-                <div class="d-flex flex-column justify-content-center align-items-center fs-5" >
+                <div class="d-flex flex-column justify-content-center align-items-center fs-5">
                     <p class="m-0">No contacts found</p>
                     <p class="text-secondary">Click "Add Contact" to get started</p>
                 </div>
             </div>
         </section>
-        <section>
-            
+
+        <section id="favorite-section-mobile"
+            class="rounded-4 mb-3 overflow-hidden bg-white shadow border-light-subtle border">
+            <div class=" d-flex align-items-center gap-3 p-3 bg-pink border-bottom border-light-subtle">
+                <div class="small-square bg-orange  text-white rounded-3"><i class="fa-solid fa-star"></i></div>
+                <div>
+                    <h2 class="fs-5 m-0 lh-1">Favorite</h2>
+                    <p class="fs-7 text-secondary m-0"> Quick access</p>
+                </div>
+            </div>
+            <div class="bg-white py-5">
+                <p class="text-center text-grey tracking-wide">No favorites yet</p>
+            </div>
+
         </section>
+        <section id="emergency-contacts-mobile" class="rounded-4 mb-3 overflow-hidden bg-white shadow border-light-subtle border">
+            <div class=" d-flex align-items-center gap-3 p-3 bg-pink border-bottom border-light-subtle">
+                <div class="small-square bg-red rounded-3 text-white"><i class="fa-solid fa-heart-pulse "></i></div>
+                <div>
+                    <h2 class="fs-5 m-0 lh-1">Emergency</h2>
+                    <p class="fs-7 text-secondary m-0"> Urgent contacts</p>
+                </div>
+            </div>
+            <div class="bg-white py-5">
+                <p class="text-center text-grey tracking-wide">No favorites yet</p>
+            </div>
+
+        </section>
+
+
     </main>
-
-
-
-
-
-
-
-
 
 
 
