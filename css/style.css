@@ -59,7 +59,7 @@
 }
 
 .bg-pink {
-    background-color: pink;
+    background-color: #fff8ec !important;
 }
 
 
@@ -89,6 +89,7 @@
 
 .py-7 {
     padding-top: 7rem;
+    padding-bottom: 7rem;
 }
 
 .p-4-5 {
